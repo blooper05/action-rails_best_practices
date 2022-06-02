@@ -5,6 +5,9 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: '${{ github.token }}'
+  tool_name:
+    description: 'Tool name to use for reviewdog reporter'
+    default: 'rails_best_practices'
   workdir:
     description: 'Working directory relative to the root directory.'
     default: '.'
@@ -47,14 +50,14 @@ runs:
         # INPUT_<VARIABLE_NAME> is not available in Composite run steps
         # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
+        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
+        INPUT_WORKDIR: ${{ inputs.workdir }}
         INPUT_LEVEL: ${{ inputs.level }}
         INPUT_REPORTER: ${{ inputs.reporter }}
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
         INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
         INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
         INPUT_ESLINT_FLAGS: ${{ inputs.eslint_flags }}
-        INPUT_WORKDIR: ${{ inputs.workdir }}
-        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 branding:

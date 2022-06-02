@@ -15,7 +15,7 @@ echo '::group:: Running rails_best_practices with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
 rails_best_practices --without-color --silent . |
   reviewdog -efm="%f:%l - %m" -efm="%-G%.%#" \
-    -name="linter-name (misspell)" \
+    -name="${INPUT_TOOL_NAME}" \
     -reporter="${INPUT_REPORTER}" \
     -filter-mode="${INPUT_FILTER_MODE}" \
     -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
