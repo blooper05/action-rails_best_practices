@@ -32,8 +32,8 @@ inputs:
     description: 'Additional reviewdog flags'
     default: ''
   ### Flags for rails_best_practices ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  rails_best_practices_flags:
+    description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
     default: ''
 runs:
   using: 'composite'
@@ -57,7 +57,7 @@ runs:
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
         INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
         INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
-        INPUT_ESLINT_FLAGS: ${{ inputs.eslint_flags }}
+        INPUT_RAILS_BEST_PRACTICES_FLAGS: ${{ inputs.rails_best_practices_flags }}
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 branding:

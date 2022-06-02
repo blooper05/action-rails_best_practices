@@ -13,7 +13,7 @@ echo '::endgroup::'
 
 echo '::group:: Running rails_best_practices with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
-rails_best_practices --without-color --silent . |
+rails_best_practices --without-color --silent . ${INPUT_RAILS_BEST_PRACTICES_FLAGS} |
   reviewdog -efm="%f:%l - %m" -efm="%-G%.%#" \
     -name="${INPUT_TOOL_NAME}" \
     -reporter="${INPUT_REPORTER}" \

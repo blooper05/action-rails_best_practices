@@ -57,8 +57,8 @@ inputs:
     description: 'Additional reviewdog flags'
     default: ''
   ### Flags for rails_best_practices ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  rails_best_practices_flags:
+    description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
     default: ''
 ```
 
