@@ -16,6 +16,7 @@ jobs:
           reporter: github-check
           level: info
           locale: "US"
+          workdir: ./testdata/
 
   test-pr-check:
     if: github.event_name == 'pull_request'
@@ -29,7 +30,7 @@ jobs:
           reporter: github-pr-check
           level: warning
           locale: "US"
-          workdir: ./testdata/subdir/
+          workdir: ./testdata/
 
   test-pr-review:
     if: github.event_name == 'pull_request'
@@ -44,6 +45,7 @@ jobs:
           reporter: github-pr-review
           level: error
           locale: "US"
+          workdir: ./testdata/
           reviewdog_flags: -filter-mode=file -fail-on-error
       - name: check the exit code
         if: ${{ !success() }}
