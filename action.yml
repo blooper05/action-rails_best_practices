@@ -1,6 +1,6 @@
 name: 'Run rails_best_practices with reviewdog'
 description: '🐶 Run rails_best_practices with reviewdog on pull requests to improve code review experience.'
-author: 'TODO: <your-name>'
+author: 'blooper05'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
