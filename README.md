@@ -54,7 +54,7 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
+  ### Flags for rails_best_practices ###
   locale:
     description: '-locale flag of misspell. (US/UK)'
     default: ''
@@ -69,7 +69,7 @@ on: [pull_request]
 jobs:
   # TODO: change `linter_name`.
   linter_name:
-    name: runner / <linter-name>
+    name: runner / rails_best_practices
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
