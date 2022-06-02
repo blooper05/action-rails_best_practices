@@ -65,8 +65,7 @@ inputs:
 name: reviewdog
 on: [pull_request]
 jobs:
-  # TODO: change `linter_name`.
-  linter_name:
+  rails_best_practices:
     name: runner / rails_best_practices
     runs-on: ubuntu-latest
     steps:
