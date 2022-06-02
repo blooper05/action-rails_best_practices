@@ -1,11 +1,10 @@
-# action-composite-template
+# action-rails_best_practices
 
-<!-- TODO: replace reviewdog/action-composite-template with your repo name -->
-[![Test](https://github.com/reviewdog/action-composite-template/workflows/Test/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3ATest)
-[![reviewdog](https://github.com/reviewdog/action-composite-template/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-composite-template/workflows/depup/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Adepup)
-[![release](https://github.com/reviewdog/action-composite-template/workflows/release/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Arelease)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-composite-template?logo=github&sort=semver)](https://github.com/reviewdog/action-composite-template/releases)
+[![Test](https://github.com/blooper05/action-rails_best_practices/workflows/Test/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3ATest)
+[![reviewdog](https://github.com/blooper05/action-rails_best_practices/workflows/reviewdog/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Areviewdog)
+[![depup](https://github.com/blooper05/action-rails_best_practices/workflows/depup/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Adepup)
+[![release](https://github.com/blooper05/action-rails_best_practices/workflows/release/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Arelease)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/blooper05/action-rails_best_practices?logo=github&sort=semver)](https://github.com/blooper05/action-rails_best_practices/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
 ![github-pr-review demo](https://user-images.githubusercontent.com/3797062/73162963-4b8e2b00-4132-11ea-9a3f-f9c6f624c79f.png)
@@ -61,7 +60,6 @@ inputs:
 ```
 
 ## Usage
-<!-- TODO: update. replace `template` with the linter name -->
 
 ```yaml
 name: reviewdog
@@ -73,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: reviewdog/action-composite-template@v1
+      - uses: blooper05/action-rails_best_practices@v1
         with:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-check,github-pr-review,github-pr-check].
@@ -98,7 +96,7 @@ ref: https://help.github.com/en/articles/about-actions#versioning-your-action
 
 ### Lint - reviewdog integration
 
-This reviewdog action template itself is integrated with reviewdog to run lints
+This reviewdog action rails_best_practices itself is integrated with reviewdog to run lints
 which is useful for Docker container based actions.
 
 ![reviewdog integration](https://user-images.githubusercontent.com/3797062/72735107-7fbb9600-3bde-11ea-8087-12af76e7ee6f.png)
