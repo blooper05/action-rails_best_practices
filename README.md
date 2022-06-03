@@ -23,13 +23,13 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: '${{ github.token }}'
-  tool_name:
-    description: 'Tool name to use for reviewdog reporter'
-    default: 'rails_best_practices'
   workdir:
     description: 'Working directory relative to the root directory.'
     default: '.'
   ### Flags for reviewdog ###
+  tool_name:
+    description: 'Tool name to use for reviewdog reporter'
+    default: 'rails_best_practices'
   level:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
@@ -50,6 +50,8 @@ inputs:
     description: 'Additional reviewdog flags'
     default: ''
   ### Flags for rails_best_practices ###
+  rails_best_practices_version:
+    description: 'rails_best_practices version'
   rails_best_practices_flags:
     description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
     default: ''

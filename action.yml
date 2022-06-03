@@ -5,13 +5,13 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: '${{ github.token }}'
-  tool_name:
-    description: 'Tool name to use for reviewdog reporter'
-    default: 'rails_best_practices'
   workdir:
     description: 'Working directory relative to the root directory.'
     default: '.'
   ### Flags for reviewdog ###
+  tool_name:
+    description: 'Tool name to use for reviewdog reporter'
+    default: 'rails_best_practices'
   level:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
@@ -32,6 +32,8 @@ inputs:
     description: 'Additional reviewdog flags'
     default: ''
   ### Flags for rails_best_practices ###
+  rails_best_practices_version:
+    description: 'rails_best_practices version'
   rails_best_practices_flags:
     description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
     default: ''
@@ -50,13 +52,14 @@ runs:
         # INPUT_<VARIABLE_NAME> is not available in Composite run steps
         # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
-        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
         INPUT_WORKDIR: ${{ inputs.workdir }}
+        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
         INPUT_LEVEL: ${{ inputs.level }}
         INPUT_REPORTER: ${{ inputs.reporter }}
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
         INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
         INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
+        INPUT_RAILS_BEST_PRACTICES_VERSION: ${{ inputs.rails_best_practices_version }}
         INPUT_RAILS_BEST_PRACTICES_FLAGS: ${{ inputs.rails_best_practices_flags }}
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
