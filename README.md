@@ -1,36 +1,31 @@
-# action-composite-template
+# action-rails_best_practices
 
-<!-- TODO: replace reviewdog/action-composite-template with your repo name -->
-[![Test](https://github.com/reviewdog/action-composite-template/workflows/Test/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3ATest)
-[![reviewdog](https://github.com/reviewdog/action-composite-template/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-composite-template/workflows/depup/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Adepup)
-[![release](https://github.com/reviewdog/action-composite-template/workflows/release/badge.svg)](https://github.com/reviewdog/action-composite-template/actions?query=workflow%3Arelease)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-composite-template?logo=github&sort=semver)](https://github.com/reviewdog/action-composite-template/releases)
+[![test](https://github.com/blooper05/action-rails_best_practices/workflows/test/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Atest)
+[![reviewdog](https://github.com/blooper05/action-rails_best_practices/workflows/reviewdog/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Areviewdog)
+[![depup](https://github.com/blooper05/action-rails_best_practices/workflows/depup/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Adepup)
+[![release](https://github.com/blooper05/action-rails_best_practices/workflows/release/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Arelease)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/blooper05/action-rails_best_practices?logo=github&sort=semver)](https://github.com/blooper05/action-rails_best_practices/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
 
-![github-pr-review demo](https://user-images.githubusercontent.com/3797062/73162963-4b8e2b00-4132-11ea-9a3f-f9c6f624c79f.png)
-![github-pr-check demo](https://user-images.githubusercontent.com/3797062/73163032-70829e00-4132-11ea-8481-f213a37db354.png)
+![github-pr-review demo](https://user-images.githubusercontent.com/5299525/171834705-b2517107-e616-4289-8ed9-4e160164701c.png)
+![github-pr-check demo](https://user-images.githubusercontent.com/5299525/171834709-130da062-3518-4b28-9a1c-24b58fe686b4.png)
 
-This is a template repository for
-[reviewdog](https://github.com/reviewdog/reviewdog) action with release
-automation based on [action composition](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action).
-Click `Use this template` button to create your reviewdog action :dog:!
+This action runs [rails_best_practices] with [reviewdog] on pull requests to improve
+code review experience.
 
-If you want to create your own reviewdog action from scratch without using this
-template, please check and copy release automation flow.
-It's important to manage release workflow and sync reviewdog version for all
-reviewdog actions.
-
-This repo contains a sample action to run [misspell](https://github.com/client9/misspell).
+[rails_best_practices]:https://github.com/flyerhzm/rails_best_practices
+[reviewdog]:https://github.com/reviewdog/reviewdog
 
 ## Input
 
-<!-- TODO: update -->
 ```yaml
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: '${{ github.token }}'
+  tool_name:
+    description: 'Tool name to use for reviewdog reporter'
+    default: 'rails_best_practices'
   workdir:
     description: 'Working directory relative to the root directory.'
     default: '.'
@@ -54,26 +49,24 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  ### Flags for rails_best_practices ###
+  rails_best_practices_flags:
+    description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
     default: ''
 ```
 
 ## Usage
-<!-- TODO: update. replace `template` with the linter name -->
 
 ```yaml
 name: reviewdog
 on: [pull_request]
 jobs:
-  # TODO: change `linter_name`.
-  linter_name:
-    name: runner / <linter-name>
+  rails_best_practices:
+    name: runner / rails_best_practices
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: reviewdog/action-composite-template@v1
+      - uses: blooper05/action-rails_best_practices@v1
         with:
           github_token: ${{ secrets.github_token }}
           # Change reviewdog reporter if you need [github-check,github-pr-review,github-pr-check].
@@ -98,16 +91,20 @@ ref: https://help.github.com/en/articles/about-actions#versioning-your-action
 
 ### Lint - reviewdog integration
 
-This reviewdog action template itself is integrated with reviewdog to run lints
-which is useful for Docker container based actions.
+This reviewdog action itself is integrated with reviewdog to run lints
+which is useful for [action composition] based actions.
+
+[action composition]:https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
 ![reviewdog integration](https://user-images.githubusercontent.com/3797062/72735107-7fbb9600-3bde-11ea-8087-12af76e7ee6f.png)
 
 Supported linters:
 
 - [reviewdog/action-shellcheck](https://github.com/reviewdog/action-shellcheck)
-- [reviewdog/action-hadolint](https://github.com/reviewdog/action-hadolint)
+- [reviewdog/action-shfmt](https://github.com/reviewdog/action-shfmt)
+- [reviewdog/action-actionlint](https://github.com/reviewdog/action-actionlint)
 - [reviewdog/action-misspell](https://github.com/reviewdog/action-misspell)
+- [reviewdog/action-alex](https://github.com/reviewdog/action-alex)
 
 ### Dependencies Update Automation
 This repository uses [reviewdog/action-depup](https://github.com/reviewdog/action-depup) to update

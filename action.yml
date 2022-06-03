@@ -1,10 +1,13 @@
-name: 'TODO: Run <linter-name> with reviewdog'
-description: 'TODO: 🐶 Run <linter-name> with reviewdog on pull requests to improve code review experience.'
-author: 'TODO: <your-name>'
+name: 'Run rails_best_practices with reviewdog'
+description: '🐶 Run rails_best_practices with reviewdog on pull requests to improve code review experience.'
+author: 'blooper05'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: '${{ github.token }}'
+  tool_name:
+    description: 'Tool name to use for reviewdog reporter'
+    default: 'rails_best_practices'
   workdir:
     description: 'Working directory relative to the root directory.'
     default: '.'
@@ -13,7 +16,7 @@ inputs:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
   reporter:
-    description: 'Reporter of reviewdog command [github-check,github-pr-review].'
+    description: 'Reporter of reviewdog command [github-check,github-pr-review,github-pr-check].'
     default: 'github-check'
   filter_mode:
     description: |
@@ -28,9 +31,9 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
+  ### Flags for rails_best_practices ###
+  rails_best_practices_flags:
+    description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
     default: ''
 runs:
   using: 'composite'
@@ -38,23 +41,25 @@ runs:
     - uses: reviewdog/action-setup@v1
       with:
         reviewdog_version: v0.14.1
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1
     - run: $GITHUB_ACTION_PATH/script.sh
       shell: bash
       env:
         # INPUT_<VARIABLE_NAME> is not available in Composite run steps
         # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
         INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
+        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
+        INPUT_WORKDIR: ${{ inputs.workdir }}
         INPUT_LEVEL: ${{ inputs.level }}
         INPUT_REPORTER: ${{ inputs.reporter }}
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
         INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
         INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
-        INPUT_ESLINT_FLAGS: ${{ inputs.eslint_flags }}
-        INPUT_WORKDIR: ${{ inputs.workdir }}
-        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
+        INPUT_RAILS_BEST_PRACTICES_FLAGS: ${{ inputs.rails_best_practices_flags }}
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
-# TODO: update branding if you want.
 branding:
-  icon: 'check'
-  color: 'blue'
+  icon: 'check-circle'
+  color: 'red'

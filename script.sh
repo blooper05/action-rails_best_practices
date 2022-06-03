@@ -7,17 +7,15 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-echo '::group::🐶 Installing misspell ... https://github.com/client9/misspell'
-TEMP_PATH="$(mktemp -d)"
-PATH="${TEMP_PATH}:$PATH"
-wget -O - -q https://git.io/misspell | sh -s -- -b "${TEMP_PATH}"
+echo '::group::🐶 Installing rails_best_practices ... https://github.com/flyerhzm/rails_best_practices'
+gem install --no-document rails_best_practices
 echo '::endgroup::'
 
-echo '::group:: Running misspell with reviewdog 🐶 ...'
+echo '::group:: Running rails_best_practices with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
-misspell -locale="${INPUT_LOCALE}" . |
-  reviewdog -efm="%f:%l:%c: %m" \
-    -name="linter-name (misspell)" \
+rails_best_practices --without-color --silent . ${INPUT_RAILS_BEST_PRACTICES_FLAGS} |
+  reviewdog -efm="%f:%l - %m" -efm="%-G%.%#" \
+    -name="${INPUT_TOOL_NAME}" \
     -reporter="${INPUT_REPORTER}" \
     -filter-mode="${INPUT_FILTER_MODE}" \
     -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
