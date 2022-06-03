@@ -1,6 +1,6 @@
 # action-rails_best_practices
 
-[![Test](https://github.com/blooper05/action-rails_best_practices/workflows/Test/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3ATest)
+[![test](https://github.com/blooper05/action-rails_best_practices/workflows/test/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Atest)
 [![reviewdog](https://github.com/blooper05/action-rails_best_practices/workflows/reviewdog/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Areviewdog)
 [![depup](https://github.com/blooper05/action-rails_best_practices/workflows/depup/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Adepup)
 [![release](https://github.com/blooper05/action-rails_best_practices/workflows/release/badge.svg)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow%3Arelease)
