@@ -38,6 +38,16 @@ jobs:
           reporter: github-check
           level: warning
 
+  yamllint:
+    name: runner / yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-yamllint@v1
+        with:
+          reporter: github-check
+          level: warning
+
   misspell:
     name: runner / misspell
     runs-on: ubuntu-latest
