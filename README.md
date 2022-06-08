@@ -107,6 +107,7 @@ Supported linters:
 - [reviewdog/action-shfmt](https://github.com/reviewdog/action-shfmt)
 - [reviewdog/action-actionlint](https://github.com/reviewdog/action-actionlint)
 - [reviewdog/action-yamllint](https://github.com/reviewdog/action-yamllint)
+- [reviewdog/action-markdownlint](https://github.com/reviewdog/action-markdownlint)
 - [reviewdog/action-misspell](https://github.com/reviewdog/action-misspell)
 - [reviewdog/action-alex](https://github.com/reviewdog/action-alex)
 
