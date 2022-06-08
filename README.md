@@ -68,7 +68,7 @@ jobs:
     name: runner / rails_best_practices
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: blooper05/action-rails_best_practices@v1
         with:
           github_token: ${{ secrets.github_token }}
