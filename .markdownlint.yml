@@ -1,0 +1,43 @@
+# refs. https://github.com/DavidAnson/markdownlint/blob/HEAD/schema/.markdownlint.yaml
+---
+default: true
+
+# MD003/heading-style/header-style - Heading style
+MD003:
+  # Heading style
+  style: atx
+
+# MD004/ul-style - Unordered list style
+MD004:
+  # List style
+  style: dash
+
+# MD007/ul-indent - Unordered list indentation
+MD007:
+  # Spaces for indent
+  indent: 4
+
+# MD013/line-length - Line length
+MD013:
+  # Number of characters for code blocks
+  code_block_line_length: 120
+
+# MD029/ol-prefix - Ordered list item prefix
+MD029:
+  # List style
+  style: ordered
+
+# MD035/hr-style - Horizontal rule style
+MD035:
+  # Horizontal rule style
+  style: ---
+
+# MD049/emphasis-style - Emphasis style should be consistent
+MD049:
+  # Emphasis style should be consistent
+  style: asterisk
+
+# MD050/strong-style - Strong style should be consistent
+MD050:
+  # Strong style should be consistent
+  style: asterisk
