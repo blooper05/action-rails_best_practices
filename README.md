@@ -84,6 +84,7 @@ jobs:
 ### Release
 
 #### [haya14busa/action-bumpr](https://github.com/haya14busa/action-bumpr)
+
 You can bump version on merging Pull Requests with specific labels (bump:major,bump:minor,bump:patch).
 Pushing tag manually by yourself also work.
 
@@ -112,6 +113,7 @@ Supported linters:
 - [reviewdog/action-alex](https://github.com/reviewdog/action-alex)
 
 ### Dependencies Update Automation
+
 This repository uses [reviewdog/action-depup](https://github.com/reviewdog/action-depup) to update
 reviewdog version.
 
