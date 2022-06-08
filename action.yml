@@ -36,7 +36,8 @@ inputs:
   rails_best_practices_version:
     description: rails_best_practices version
   rails_best_practices_flags:
-    description: rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)
+    description: |
+      rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)
     default: ''
 runs:
   using: composite
