@@ -1,3 +1,4 @@
+---
 name: 'Run rails_best_practices with reviewdog'
 description: '🐶 Run rails_best_practices with reviewdog on pull requests to improve code review experience.'
 author: 'blooper05'
