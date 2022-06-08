@@ -1,0 +1,12 @@
+---
+extends: default
+
+rules:
+  line-length:
+    max: 120
+  quoted-strings:
+    quote-type: single
+    required: only-when-needed
+  truthy:
+    ignore: |
+      /.github/workflows/*.yml

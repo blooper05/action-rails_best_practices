@@ -21,39 +21,40 @@ code review experience.
 ```yaml
 inputs:
   github_token:
-    description: 'GITHUB_TOKEN'
-    default: '${{ github.token }}'
+    description: GITHUB_TOKEN
+    default: ${{ github.token }}
   workdir:
-    description: 'Working directory relative to the root directory.'
-    default: '.'
+    description: Working directory relative to the root directory.
+    default: .
   ### Flags for reviewdog ###
   tool_name:
-    description: 'Tool name to use for reviewdog reporter'
-    default: 'rails_best_practices'
+    description: Tool name to use for reviewdog reporter
+    default: rails_best_practices
   level:
-    description: 'Report level for reviewdog [info,warning,error]'
-    default: 'error'
+    description: Report level for reviewdog [info,warning,error]
+    default: error
   reporter:
-    description: 'Reporter of reviewdog command [github-check,github-pr-review,github-pr-check].'
-    default: 'github-check'
+    description: Reporter of reviewdog command [github-check,github-pr-review,github-pr-check].
+    default: github-check
   filter_mode:
     description: |
       Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
       Default is added.
-    default: 'added'
+    default: added
   fail_on_error:
     description: |
       Exit code for reviewdog when errors are found [true,false]
       Default is `false`.
     default: 'false'
   reviewdog_flags:
-    description: 'Additional reviewdog flags'
+    description: Additional reviewdog flags
     default: ''
   ### Flags for rails_best_practices ###
   rails_best_practices_version:
-    description: 'rails_best_practices version'
+    description: rails_best_practices version
   rails_best_practices_flags:
-    description: 'rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)'
+    description: |
+      rails_best_practices flags (rails_best_practices --without-color --silent . <rails_best_practices_flags>)
     default: ''
 ```
 
@@ -105,6 +106,7 @@ Supported linters:
 - [reviewdog/action-shellcheck](https://github.com/reviewdog/action-shellcheck)
 - [reviewdog/action-shfmt](https://github.com/reviewdog/action-shfmt)
 - [reviewdog/action-actionlint](https://github.com/reviewdog/action-actionlint)
+- [reviewdog/action-yamllint](https://github.com/reviewdog/action-yamllint)
 - [reviewdog/action-misspell](https://github.com/reviewdog/action-misspell)
 - [reviewdog/action-alex](https://github.com/reviewdog/action-alex)
 
