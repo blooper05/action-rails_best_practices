@@ -2,7 +2,7 @@
 name: depup
 on:
   schedule:
-    - cron: "14 14 * * *"  # Runs at 14:14 UTC every day
+    - cron: 14 14 * * *  # Runs at 14:14 UTC every day
   repository_dispatch:
     types: [depup]
   workflow_dispatch:
@@ -17,4 +17,4 @@ jobs:
           file: action.yml
           version_name: reviewdog_version
           repo: reviewdog/reviewdog
-          labels: "bump:minor"
+          labels: bump:minor
