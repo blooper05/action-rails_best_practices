@@ -92,7 +92,7 @@ Pushing tag manually by yourself also work.
 
 This action updates major/minor release tags on a tag push.
 e.g. Update v1 and v1.2 tag when released v1.2.3.
-ref: https://help.github.com/en/articles/about-actions#versioning-your-action
+ref: <https://help.github.com/en/articles/about-actions#versioning-your-action>
 
 ### Lint - reviewdog integration
 
