@@ -1,3 +1,4 @@
+# @see https://github.com/adrienverge/yamllint/blob/HEAD/yamllint/conf/default.yaml
 ---
 extends: default
 

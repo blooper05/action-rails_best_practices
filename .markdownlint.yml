@@ -1,4 +1,4 @@
-# refs. https://github.com/DavidAnson/markdownlint/blob/HEAD/schema/.markdownlint.yaml
+# @see https://github.com/DavidAnson/markdownlint/blob/HEAD/schema/.markdownlint.yaml
 ---
 default: true
 
