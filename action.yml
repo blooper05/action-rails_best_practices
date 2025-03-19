@@ -17,13 +17,13 @@ inputs:
     description: Report level for reviewdog [info,warning,error].
     default: error
   reporter:
-    description: Reporter of reviewdog command [github-check,github-pr-review,github-pr-check].
+    description: Reporter of reviewdog command [github-check,github-pr-review,github-pr-check,sarif].
     default: github-check
   filter_mode:
     description: |
       Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
-      Default is added.
-    default: added
+      Default is `added` except that sarif reporter uses `nofilter`.
+    default: ''
   fail_on_error:
     description: |
       Exit code for reviewdog when errors are found [true,false].
@@ -32,6 +32,9 @@ inputs:
   reviewdog_flags:
     description: Additional reviewdog flags.
     default: ''
+  output_dir:
+    description: Output directory of reviewdog result. Useful for -reporter=sarif
+    default: ../reviewdog-results
   ### Flags for rails_best_practices ###
   rails_best_practices_version:
     description: rails_best_practices version
@@ -58,8 +61,13 @@ runs:
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
         INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
         INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
+        INPUT_OUTPUT_DIR: ${{ inputs.output_dir }}
         INPUT_RAILS_BEST_PRACTICES_VERSION: ${{ inputs.rails_best_practices_version }}
         INPUT_RAILS_BEST_PRACTICES_FLAGS: ${{ inputs.rails_best_practices_flags }}
+    - if: inputs.reporter == 'sarif'
+      uses: github/codeql-action/upload-sarif@6bb031afdd8eb862ea3fc1848194185e076637e5  # v3.28.11
+      with:
+        sarif_file: ${{ inputs.output_dir }}
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
 branding:
