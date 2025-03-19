@@ -1,9 +1,9 @@
 # action-rails_best_practices
 
-[![test](https://img.shields.io/github/workflow/status/blooper05/action-rails_best_practices/test?label=test&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:test)
-[![reviewdog](https://img.shields.io/github/workflow/status/blooper05/action-rails_best_practices/reviewdog?label=reviewdog&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:reviewdog)
-[![depup](https://img.shields.io/github/workflow/status/blooper05/action-rails_best_practices/depup?label=depup&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:depup)
-[![release](https://img.shields.io/github/workflow/status/blooper05/action-rails_best_practices/release?label=release&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:release)
+[![test](https://img.shields.io/github/actions/workflow/status/blooper05/action-rails_best_practices/test.yml?branch=main&label=test&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:test)
+[![reviewdog](https://img.shields.io/github/actions/workflow/status/blooper05/action-rails_best_practices/reviewdog.yml?branch=main&label=reviewdog&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:reviewdog)
+[![depup](https://img.shields.io/github/actions/workflow/status/blooper05/action-rails_best_practices/depup.yml?branch=main&label=depup&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:depup)
+[![release](https://img.shields.io/github/actions/workflow/status/blooper05/action-rails_best_practices/release.yml?branch=main&label=release&logo=github&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/actions?query=workflow:release)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/blooper05/action-rails_best_practices?logo=github&sort=semver&style=flat-square)](https://github.com/blooper05/action-rails_best_practices/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&style=flat-square)](https://github.com/haya14busa/action-bumpr)
 
