@@ -69,6 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+      - uses: ruby/setup-ruby@1a615958ad9d422dd932dc1d5823942ee002799f  # v1.227.0
       - uses: blooper05/action-rails_best_practices@14a7d36a50f927d790d08ca78009468711e62055  # v1.0.3
         with:
           github_token: ${{ secrets.github_token }}
